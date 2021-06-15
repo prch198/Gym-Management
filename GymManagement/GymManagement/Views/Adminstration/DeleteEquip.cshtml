@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model GymManagement.Models.Equipement
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "./_LayoutAdmin.cshtml";
+}
+
+<h1>
+    Delete
+</h1>
+<h3>Are you sure you want to delete</h3>
+<div>
+    <h4>
+        Equipement
+    </h4>
+    <br />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.eqname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.eqname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.qty)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.qty)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.date)
+        </dd>
+    </dl>
+    <form asp-action="DeleteEquip">
+        <input type="hidden" asp-for="EquipementId" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="GetEquips">Back to list</a>
+    </form>
+</div>

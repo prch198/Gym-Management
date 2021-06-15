@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model GymManagement.Models.Plan
+@{
+    ViewData["Title"] = "Get A Plan";
+    Layout = "./_LayoutMember.cshtml";
+}
+
+<h1>
+    Selected Plan
+</h1>
+<br/>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PlanName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PlanName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.details)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.details)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.amount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.amount)
+        </dd>
+    </dl>
+    <form asp-action="AddMembership">
+        <input type="hidden" asp-for="PlanId" />
+
+        <input type="submit" value="confirm" class="btn btn-primary" />
+        <a asp-action="GetPlans">Back to list</a>
+    </form>
+</div>

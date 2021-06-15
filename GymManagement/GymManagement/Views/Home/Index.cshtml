@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+        <style>
+            body{
+                background-color:cadetblue;
+            }
+            img{
+                height:600px;
+                width:100%;
+            }
+        </style>
+        <h1 class="display-4">Welcome To Fitness Club</h1>
+        <!--<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>-->
+        <a asp-controller="adminstration" asp-action="GetPlans" class="btn btn-warning">Admin</a>
+        <a asp-controller="member" asp-action="GetPlans" class="btn btn-warning">Member</a>
+        <br />
+        <br />
+        <div>
+            <img src="~/images/gym.jpg"/>
+        </div>
+    </div>

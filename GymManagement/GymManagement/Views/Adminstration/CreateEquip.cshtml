@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model GymManagement.Models.Equipement
+@{
+    ViewData["Title"] = "Add Equipement";
+    Layout = "./_LayoutAdmin.cshtml";
+}
+<h1>Create</h1>
+<h4>Equipement</h4>
+<br />
+<div class="col-md-4">
+    <form asp-action="CreateEquip">
+        <div class="form-group">
+            <label asp-for="eqname" class="control-label"></label>
+            <input asp-for="eqname" class="form-control" />
+            <span asp-validation-for="eqname" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="qty" class="control-label"></label>
+            <input asp-for="qty" class="form-control" />
+            <span asp-validation-for="qty" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="price" class="control-label"></label>
+            <input asp-for="price" class="form-control" />
+            <span asp-validation-for="price" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="date" class="control-label"></label>
+            <input asp-for="date" class="form-control" />
+            <span asp-validation-for="date" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+<div>
+    <a asp-action="GetEquips">Back to List</a>
+</div>

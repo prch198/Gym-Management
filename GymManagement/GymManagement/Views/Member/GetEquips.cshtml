@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Equipement>
+@{
+    ViewData["Title"] = "Get All Equipements";
+    Layout = "./_LayoutMember.cshtml";
+}
+<h1>All Equipements</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.eqname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var equip in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => equip.eqname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => equip.qty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => equip.price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => equip.date)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

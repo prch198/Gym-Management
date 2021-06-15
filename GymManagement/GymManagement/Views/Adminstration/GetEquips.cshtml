@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Equipement>
+@{
+    ViewData["Title"] = "Get All Equipements";
+    Layout = "./_LayoutAdmin.cshtml";
+}
+<h1>All Equipements</h1>
+<p>
+    <a asp-action="CreateEquip">Add New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.eqname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var equip in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => equip.eqname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => equip.qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => equip.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => equip.date)
+            </td>
+            <td>
+                <a asp-action="EditEquip" asp-route-id="@equip.EquipementId">Update</a>
+                <a asp-action="DeleteEquip" asp-route-id="@equip.EquipementId">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+    </table>
+

@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Plan>
+@{
+    ViewData["Title"] = "Get All Plans";
+    Layout = "./_LayoutAdmin.cshtml";
+}
+<h1>All Plans</h1>
+<p>
+    <a asp-action="CreatePlan">Add Plan</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PlanName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.details)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.amount)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var plan in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => plan.PlanName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => plan.details)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => plan.amount)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
